@@ -1,0 +1,41 @@
+list)
+    True
+
+
+Print_sorted method with 1 passed argument
+    >>> my_list = MyList()
+    >>> my_list.print_sorted([1, 2, 3])
+    Traceback (most recent call last):
+    	      ...
+    TypeError: print_sorted() takes 1 positional argument but 2 were given
+
+
+Print_sorted method with 2 passed arguments
+    >>> my_list = MyList()
+    >>> my_list.print_sorted([1, 2], [5, 4])
+    Traceback (most recent call last):
+    	      ...
+    TypeError: print_sorted() takes 1 positional argument but 3 were given
+
+
+Type of the print_sorted method
+    >>> my_list = MyList()
+    >>> type(my_list.print_sorted)
+    <class 'method'>
+
+
+Check printable string
+    >>> my_list = MyList()
+    >>> my_list.append(5)
+    >>> print(my_list)
+    [5]
+
+Check if print_sorted() returns a new list
+    >>> my_list = MyList()
+    >>> my_list.append(7)
+    >>> my_list.append(1)
+    >>> my_list.append(2)
+    >>> my_list.print_sorted()
+    [1, 2, 7]
+    >>> my_list
+    [7, 1, 2]
