@@ -1,13 +1,26 @@
 #!/usr/bin/python3
-""" Module that returns the dictionary description with a simple
-data structure for a JSON serialization of an object
+"""
+Contains the clas "Student"
 """
 
 
-def class_to_json(obj):
-    """ Function that retuns the dictionary description of an obj """
+class Student:
+    """Representation of a student"""
+    def __init__(self, first_name, last_name, age):
+        """Initializes the student"""
+        self.first_name = first_name
+        self.last_name = last_name
+        self.age = age
 
-    res = {}
-    if hasattr(obj, "__dict__"):
-        res = obj.__dict__.copy()
-    return res
+    def to_json(self, attrs=None):
+        """returns a dictionary representation of a Student instance
+        with specified attributes"""
+        if attrs is None:
+            return self.__dict__
+        new_dict = {}
+        for a in attrs:
+            try:
+                new_dict[a] = self.__dict__[a]
+            except:
+                pass
+        return new_dict
